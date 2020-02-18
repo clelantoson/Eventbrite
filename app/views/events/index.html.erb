@@ -1,0 +1,44 @@
+  <main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Coucou, voici nos events ! </h1>
+      <p>Chaque événement est unique, choisis-en un.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+
+    <% @all_events.each_with_index do |event, index| %>
+
+      <div class="card text-white bg-warning col-md-4" style="max-width: 18rem;">
+        <div class="card-header"><%=event.title%></div>
+        <div class="card-body">
+          <p class="card-text">
+           <%= event.description %><br/>
+            Duration : <%= event.duration %><br/>
+            Price :  <%= event.price %><br/>
+            Location :<%= event.location %><br/>
+            By: <%= event.admin.first_name %><br/>
+            <%= link_to "Watch the event", event_path(event), class: "btn btn-primary" %> 
+          </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Company 2017-2019</p>
+</footer>
