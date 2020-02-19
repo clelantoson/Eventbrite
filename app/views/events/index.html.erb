@@ -20,10 +20,10 @@
         <div class="card-body">
           <p class="card-text">
            <%= event.description %><br/>
-            Duration : <%= event.duration %>minutes<br/>
-            Price :  <%= event.price %> €<br/>
-            Location :<%= event.location %><br/>
-            By: <%= event.admin.first_name %><br/>
+            Duration : <%= event.duration %> minutes<br/>
+            Price : <%= event.price %> €<br/>
+            Location : <%= event.location %><br/>
+            By : <%= event.admin.first_name %><br/>
             <%= link_to "Watch the event", event_path(event), class: "btn btn-primary" %> 
           </p>
         </div>
