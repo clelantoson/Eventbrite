@@ -12,3 +12,6 @@ go to localhost:3000
 
 I think i didnt manage to do this on 2.3.3
 "Quand un événement est créé, le current_user doit y être associé en tant qu'administrateur. Cela veut dire que Devise devra authentifier l'utilisateur avant de pouvoir faire new ou create."
+
+
+PS : IF YOU CANT CLICK ON THE NAVBAR JUST REFRESH THE PAGE AND TRY AGAIN PLEASE i coulndt make it work better....
