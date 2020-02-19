@@ -1,0 +1,46 @@
+<div class="container">      
+    <h1> Create a brand new event babe 🗓️</h1>
+    <hr><br />
+
+    <% if @event.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <br>
+        <p>⚠️ Nous n'avons pas réussi à créer l'événement pour la (ou les) raison(s) suivante(s) :</p>
+        <ul>
+          <% @event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <br>
+      </div>
+    <% end %>
+
+    <%= form_tag events_path, method: "POST" do %>
+      <div class="form-group mb-2">
+        <%= text_field_tag :title, params[:title], class: 'form-control col-sm-3', placeholder: 'Title* (between 5 & 140 characters' %>
+      </div>
+      <br>
+      <div class="form-group mb-2">
+        <%= text_field_tag :start_date, params[:start_date], class: 'form-control col-sm-5', placeholder: 'Date* (format : YYYY-MM-DD HH:MM:SS)' %>
+      </div>
+      <br>
+      <div class="form-group mb-2">
+        <%= text_field_tag :duration, params[:duration], class: 'form-control col-sm-5', placeholder: 'Durée* (number of minutes ending by 0 or 5)' %>
+      </div>
+      <br>
+      <div class="form-group mb-2">
+        <%= text_field_tag :price, params[:price], class: 'form-control col-sm-3', placeholder: 'Price* (between 1 & 1000 euros)' %>
+      </div>
+      <br>
+       <div class="form-group mb-2">
+        <%= text_field_tag :location, params[:location], class: 'form-control col-sm-3', placeholder: 'Location*' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <%= text_area_tag :description, params[:description], class: 'form-control col-sm-7', placeholder: 'Description*' %>
+      </div>
+      <br>
+        <%= submit_tag "Create event 🚀", class: 'btn btn-primary' %>
+
+    <% end %>
+  </div>

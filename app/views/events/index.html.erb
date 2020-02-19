@@ -2,20 +2,20 @@
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3">Coucou, voici nos events ! </h1>
-      <p>Chaque événement est unique, choisis-en un.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    <div class="container text-center">
+      <h1 class="display-3 ">Our best events for you </h1>
+      <p>Each event is unique, create one or join one.</p>
+      <%= link_to "Create event", new_event_path, class:"btn btn-primary" %>
     </div>
   </div>
 
   <div class="container">
     <!-- Example row of columns -->
-    <div class="row">
+    <div class="row" style="margin:auto">
 
     <% @all_events.each_with_index do |event, index| %>
 
-      <div class="card text-white bg-warning col-md-4" style="max-width: 18rem;">
+      <div class="card text-white bg-warning" style="width: 18rem; margin:10px" >
         <div class="card-header"><%=event.title%></div>
         <div class="card-body">
           <p class="card-text">
@@ -39,6 +39,3 @@
 
 </main>
 
-<footer class="container">
-  <p>&copy; Company 2017-2019</p>
-</footer>

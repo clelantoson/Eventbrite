@@ -1,0 +1,26 @@
+<div class="text-center">
+
+  <div class="card border-warning mb-3 mt-3">
+
+    <div class="card-header"><h1><%=@event.title%></h1></div>
+    <div class="card-body text-warning">
+      <h5 class="card-title">Description : <i><%=@event.description%></h5>
+      <p class="card-text">Admin : <%= link_to "#{@event.admin.first_name}", user_path(@event.admin.id) %> <br>
+        Attendance : <%=@event.attendances.count%><br>
+        Start Date : <%=@event.created_at%><br>
+        Location : <%=@event.location %><br>
+       Price : <%=@event.price%> €<br>
+      </p>
+    </div>
+  </div>
+
+  <%if current_user == @event.admin%>
+
+  <%= link_to "Édit Event", edit_event_path, class:"btn btn-info mb-3 mt-3" %>
+
+  <%= form_tag url_for(action: 'destroy'), method: "delete" do %>
+
+        <%= submit_tag "Delete Event",class:"btn btn-warning mb-3" %>
+  <% end %>
+  <%end%>
+</div>

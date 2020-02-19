@@ -1,1 +1,27 @@
-coucou
+<h1>Welcome on your profile page <%=@user.first_name%></h1>
+
+<br /><br /><br />
+<%=@user.first_name%><br />
+<%=@user.last_name%><br />
+<%=@user.description%><br />
+<p>Here's your email <%=@user.email%></p><br />
+
+<%= link_to "Change your email / password", edit_user_registration_path %> <br>
+
+<hr>
+
+<h2>Events you created</h2>
+
+
+<div class="container">
+        <%@events.all.each do |event|%>
+        <div class="card text-center bg-info text-white">
+            Title : <h5 class='card-title'><%=event.title%></h5>
+            <div class='btn'><%= link_to "Details", event_path(event.id), :class=>'btn btn-warning'%></div>
+        </div><br/>
+        <%end%>
+    </div>
+
+
+
+
