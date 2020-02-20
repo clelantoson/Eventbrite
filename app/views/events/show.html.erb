@@ -2,7 +2,7 @@
 
   <div class="card border-warning mb-3 mt-3">
 
-    <div class="card-header"><h1><%=@event.title%></h1></div>
+    <div class="card-header"><h1><%=@event.admin.first_name%></h1></div>
     <div class="card-body text-warning">
       <h5 class="card-title">Description : <i><%=@event.description%></h5>
       <p class="card-text">Admin : <%= link_to "#{@event.admin.first_name}", user_path(@event.admin.id) %> <br>
@@ -10,6 +10,8 @@
         Start Date : <%=@event.created_at%><br>
         Location : <%=@event.location %><br>
        Price : <%=@event.price%> €<br>
+
+       <%= link_to "Subcribe to event", edit_event_path, class:"btn btn-info mb-3 mt-3" %>
       </p>
     </div>
   </div>
