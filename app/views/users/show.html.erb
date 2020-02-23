@@ -8,6 +8,18 @@
 
 <%= link_to "Change your email / password", edit_user_registration_path %> <br>
 
+<h3>Avatar actuel</h3>
+    <%if @user.avatar.attached?%>
+    <%= image_tag @user.avatar, alt: 'avatar' %>
+    <%else%>
+    <%= image_tag 'default_avatar.jpeg' %>
+<%end%>
+
+<h3>Changer d'avatar ?</h3>
+    <%= form_tag user_avatars_path(@user), multipart: true do %>
+    <%= file_field_tag :avatar, required: true %>
+    <%= submit_tag "mettre à jour" %>
+    <% end %>
 <hr>
 
 <h2>Events you created</h2>
