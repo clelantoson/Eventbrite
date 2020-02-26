@@ -11,7 +11,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   super
+  #   super do
+  #     resource.first_name = params[:first_name]
+  #     resource.last_name = params[:last_name]
+  #     resource.description = params[:description]
+  #     resource.save
+  #   end
   # end
 
   # GET /resource/edit

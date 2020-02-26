@@ -1,4 +1,4 @@
-<%= form_tag charges_path do %>
+<%= form_tag attendances_path do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -16,3 +16,9 @@
           data-amount="500"
           data-locale="auto"></script>
 <% end %>
+
+<%
+=begin%>
+  Ajouter un hidden params pour avoir le event_id dans le controller attendances
+<%
+=end%>

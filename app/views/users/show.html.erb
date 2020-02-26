@@ -9,12 +9,12 @@
 <%= link_to "Change your email / password", edit_user_registration_path %> <br>
 
 <h3>Avatar actuel</h3>
-    <%if @user.avatar.attached?%>
-    <%= image_tag @user.avatar, alt: 'avatar' %>
-    <%else%>
-    <%= image_tag 'default_avatar.jpeg' %>
-<%end%>
-
+<%=show_avatar(@user)%> 
+<%
+=begin%>
+ bout de code dans Helper pour garder le code DRY 
+<%
+=end%>
 <h3>Changer d'avatar ?</h3>
     <%= form_tag user_avatars_path(@user), multipart: true do %>
     <%= file_field_tag :avatar, required: true %>
@@ -26,7 +26,7 @@
 
 
 <div class="container">
-        <%@events.all.each do |event|%>
+        <%@user.events.all.each do |event|%>
         <div class="card text-center bg-info text-white">
             Title : <h5 class='card-title'><%=event.title%></h5>
             <div class='btn'><%= link_to "Details", event_path(event.id), :class=>'btn btn-warning'%></div>
